@@ -38,10 +38,10 @@ func main() {
 
 	if len(args) == 0 {
 		fmt.Print(
-			"create-fudge-app is a project builder for Typescript ecosystem.\n\n" +
+			"\ncreate-fudge-app is a project builder for Typescript ecosystem.\n\n" +
 				"Usage:\n\n" +
 				"\tcreate-fudge-app <command> [arguments]\n\n\n" +
-				"Use \"create-fudge-app help\" for more information.\n\n",
+				"Use \"create-fudge-app help\" for more information.\n",
 		)
 
 		return
