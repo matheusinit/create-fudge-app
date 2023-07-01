@@ -11,6 +11,10 @@ func getProjectName(installation_path string) string {
 
 	app_name := path_slices[len(path_slices)-1]
 
+	if app_name == "." {
+		return "app"
+	}
+
 	return app_name
 }
 
@@ -19,8 +23,8 @@ func getAppName(installation_path string) string {
 
 	path := strings.Join(path_slices[:len(path_slices)-1], "/")
 
-	if path == "." {
-		return "app"
+	if strings.Trim(path, " ") == "" {
+		return "."
 	}
 
 	return path
