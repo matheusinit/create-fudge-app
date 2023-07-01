@@ -55,13 +55,32 @@ func main() {
 		fmt.Print("fudge... you are by yourself in this. Sorry mate")
 	}
 
+	argsMap := make(map[string]string)
+
+	for index, arg := range args {
+		if index%2 != 0 {
+			continue
+		}
+
+		argsMap[arg] = args[index+1]
+	}
+
+	for key, item := range argsMap {
+		fmt.Println(key, "->", item)
+	}
+
 	args_length := len(args)
 
-	installation_path := args[args_length-1]
+	if args_length%2 != 1 {
+		fmt.Println(colorRed("app name not informed"))
+		return
+	}
+
+	installation_path := args[len(args)-1]
 
 	path := getAppName(installation_path)
 
 	app_name := getProjectName(installation_path)
 
-	buildFramework(args[1], app_name, path)
+	buildFramework(argsMap["--framework"], app_name, path)
 }
