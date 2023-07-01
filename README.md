@@ -38,4 +38,7 @@ create-fudge-app is a tool builder to boilerplate common used stacks to not wast
 | `--orm`                     | Define ORM to use. Values: ["Prisma", "Drizzle", "TypeORM"] | `-o` | `None` |
 | `--be-folder-name`          | Define name for back-end folder | `None` | `server-app` |
 | `--be-folder-name`          | Define name for front-end folder | `None` | `web` |
+| `--version`                 | See the current version of cli app | `-v` | `None` |
+| `--help`                    | Get help from the cli app | `-h` | `None` |
+
 
