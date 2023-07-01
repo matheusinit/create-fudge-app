@@ -6,6 +6,26 @@ import (
 	"strings"
 )
 
+func getProjectName(installation_path string) string {
+	path_slices := strings.Split(installation_path, "/")
+
+	app_name := path_slices[len(path_slices)-1]
+
+	return app_name
+}
+
+func getAppName(installation_path string) string {
+	path_slices := strings.Split(installation_path, "/")
+
+	path := strings.Join(path_slices[:len(path_slices)-1], "/")
+
+	if path == "." {
+		return "app"
+	}
+
+	return path
+}
+
 func main() {
 	args := os.Args[1:]
 
@@ -31,15 +51,13 @@ func main() {
 		fmt.Print("fudge... you are by yourself in this. Sorry mate")
 	}
 
-	if args[0] == "--framework" {
-		raw_path := "../../my-fudge-app"
+	args_length := len(args)
 
-		path_slices := strings.Split(raw_path, "/")
+	installation_path := args[args_length-1]
 
-		path := strings.Join(path_slices[:len(path_slices)-1], "/")
+	path := getAppName(installation_path)
 
-		app_name := path_slices[len(path_slices)-1]
+	app_name := getProjectName(installation_path)
 
-		buildFramework(args[1], app_name, path)
-	}
+	buildFramework(args[1], app_name, path)
 }
