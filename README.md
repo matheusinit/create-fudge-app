@@ -26,18 +26,12 @@ create-fudge-app is a tool builder to boilerplate common used stacks to not wast
 
 | Argument                    | Description                                      | Shorthand | Default     |
 | :-------------------------- | :----------------------------------------------- |:--:|:----------:|
-| `--path`                    | Path where project will be build                 | `-p` | `.`       |
-| `--fe-framework`            | Define framework. Values: React and Next         | `None` | `React`       |
-| `--styles`                  | Define the library for styles. Values: ["TailwindCss", "StyledComponents"] | `-s` | `TailwindCss`|
+| `--fe-framework`            | Define framework. Values: React and Next         | `None` | `reactjs`       |
+| `--styles`                  | Define the library for styles. Values: ["TailwindCss", "StyledComponents"] | `-s` | `tailwindcss`|
 | `--package-manager`         | Define framework. Values: ["npm", "yarn", "pnpm"]| `-pm` | `pnpm`|
-| `--use-linter`              | Define framework.                                | `-ul` | `-` |
-| `--typescript`              | Use typescript instead of javascript.            | `-t` | `-` |
-| `--use-backend`             | Define that project has a Back-end               | `-b` | `-`|
-| `--use-frontend`            | Define that project has a Front-end | `-f` | `-`|
+| `--use-linter`              | Define framework.                                | `-lt` | `-` |
+| `--use-typescript`              | Use typescript instead of javascript.            | `-ts` | `-` |
 | `--be-framework`            | Define back-end framework. Values: ["Express", "Fastify", "NestJS"] | `None` | `None` |
-| `--orm`                     | Define ORM to use. Values: ["Prisma", "Drizzle", "TypeORM"] | `-o` | `None` |
-| `--be-folder-name`          | Define name for back-end folder | `None` | `server-app` |
-| `--be-folder-name`          | Define name for front-end folder | `None` | `web` |
 | `--version`                 | See the current version of cli app | `-v` | `None` |
 | `--help`                    | Get help from the cli app | `-h` | `None` |
 
