@@ -6,15 +6,13 @@ import (
 )
 
 func buildFramework(framework, projectName, path string) {
-	if framework == "react" {
-		cmd := exec.Command("pnpm", "create", "vite", projectName, "--template", framework)
+	cmd := exec.Command("pnpm", "create", "vite", projectName, "--template", framework)
 
-		cmd.Dir = path
+	cmd.Dir = path
 
-		err := cmd.Run()
+	err := cmd.Run()
 
-		if err != nil {
-			log.Fatal(err)
-		}
+	if err != nil {
+		log.Fatal(err)
 	}
 }
