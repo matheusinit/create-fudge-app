@@ -26,7 +26,7 @@ create-fudge-app is a tool builder to boilerplate common used stacks to not wast
 
 | Argument                    | Description                                      | Shorthand | Default     |
 | :-------------------------- | :----------------------------------------------- |:--:|:----------:|
-| `--fe-framework`            | Define framework. Values: React and Next         | `None` | `reactjs`       |
+| `--fe-framework`            | Define framework. Values: ["reactjs", "nextjs"]        | `None` | `reactjs`       |
 | `--styles`                  | Define the library for styles. Values: ["TailwindCss", "StyledComponents"] | `-s` | `tailwindcss`|
 | `--package-manager`         | Define framework. Values: ["npm", "yarn", "pnpm"]| `-pm` | `pnpm`|
 | `--use-linter`              | Define framework.                                | `-lt` | `-` |
