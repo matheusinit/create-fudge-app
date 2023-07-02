@@ -3,36 +3,7 @@ package main
 import (
 	"fmt"
 	"os"
-	"strings"
 )
-
-func getProjectName(installation_path string, app_name_informed bool) string {
-	if !app_name_informed {
-		return "app"
-	}
-
-	path_slices := strings.Split(installation_path, "/")
-
-	app_name := path_slices[len(path_slices)-1]
-
-	if app_name == "." {
-		return "app"
-	}
-
-	return app_name
-}
-
-func getAppName(installation_path string) string {
-	path_slices := strings.Split(installation_path, "/")
-
-	path := strings.Join(path_slices[:len(path_slices)-1], "/")
-
-	if strings.Trim(path, " ") == "" {
-		return "."
-	}
-
-	return path
-}
 
 func main() {
 	args := os.Args[1:]
@@ -56,7 +27,7 @@ func main() {
 	}
 
 	if args[0] == "--help" {
-		fmt.Print("fudge... you are by yourself in this. Sorry mate")
+		fmt.Print("fudge... you are by yourself in this. Sorry mate.")
 	}
 
 	argsMap := make(map[string]string)
@@ -77,13 +48,7 @@ func main() {
 		fmt.Println(key, "->", item)
 	}
 
-	app_name_informed := false
+	app_name, path_name := getProjectOptions(args)
 
-	if len(args)%2 == 1 {
-		app_name_informed = true
-	}
-
-	installation_path := args[len(args)-1]
-
-	buildProject(argsMap["--fe-framework"], installation_path, app_name_informed)
+	buildProject(argsMap["--fe-framework"], app_name, path_name)
 }
