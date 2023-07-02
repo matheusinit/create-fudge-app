@@ -21,3 +21,13 @@ func TestIfGetAppNameReturnsProperValueAtCurrentPath(t *testing.T) {
 		t.Errorf("getAppName(installation_path) = %q, want %q", got, expected)
 	}
 }
+
+func TestIfGetAppNameReturnsProperValueAtRelativePath(t *testing.T) {
+	installation_path := "../../nextjs"
+
+	expected := "nextjs"
+
+	if got := getAppName(installation_path); got != expected {
+		t.Errorf("getAppName(installation_path) = %q, want %q", got, expected)
+	}
+}
