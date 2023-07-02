@@ -8,16 +8,12 @@ import (
 	"strings"
 )
 
-func getAppName(installation_path string, app_name_informed bool) string {
-	if !app_name_informed {
-		return "app"
-	}
-
+func getAppName(installation_path string) string {
 	path_slices := strings.Split(installation_path, "/")
 
 	app_name := path_slices[len(path_slices)-1]
 
-	if app_name == "." {
+	if app_name == "." || strings.Trim(app_name, " ") == "" {
 		return "app"
 	}
 
@@ -37,22 +33,15 @@ func getPath(installation_path string) string {
 }
 
 func getProjectOptions(args []string) (string, string) {
-	// Get app name, path
-	app_name_informed := false
-
-	if len(args)%2 == 1 {
-		app_name_informed = true
-	}
-
 	var installation_path string
 
-	if !app_name_informed {
-		installation_path = "./app"
+	if len(args)%2 == 1 {
+		installation_path = ""
 	} else {
 		installation_path = args[len(args)-1]
 	}
 
-	app_name := getAppName(installation_path, app_name_informed)
+	app_name := getAppName(installation_path)
 
 	path_name := getPath(installation_path)
 
