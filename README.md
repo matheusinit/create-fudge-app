@@ -35,4 +35,6 @@ create-fudge-app is a tool builder to boilerplate common used stacks to not wast
 | `--version`                 | See the current version of cli app | `-v` | `None` |
 | `--help`                    | Get help from the cli app | `-h` | `None` |
 
+### TO-DO
 
+- [ ] Do a complete front-end boilerplate com ReactJS, TailwindCSS, Eslint
