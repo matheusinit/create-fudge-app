@@ -44,10 +44,6 @@ func main() {
 		argsMap[arg] = args[index+1]
 	}
 
-	for key, item := range argsMap {
-		fmt.Println(key, "->", item)
-	}
-
 	app_name, path_name := getProjectOptions(args)
 
 	buildProject(argsMap["--fe-framework"], app_name, path_name)

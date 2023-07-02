@@ -49,26 +49,12 @@ func getProjectOptions(args []string) (string, string) {
 }
 
 func buildProject(framework, app_name, path_name string) {
-	fmt.Println("framework", "->", framework)
-	fmt.Println("app_name", "->", app_name)
-	fmt.Println("path_name", "->", path_name)
-
 	if framework == "nextjs" {
-		// TO-DO
-
-		// [x] ensure installation_path is getting nil when not passed OR get default value (./app)
-		// [x] get stdout to print
-		// [ ] do a complete front-end boilerplate com react, tailwind, eslint
-
 		installation_path := path_name + "/" + app_name
-
-		fmt.Println("installation_path", "->", installation_path)
 
 		cmd := exec.Command("pnpm", "create", "next-app", "--example", "next-css", installation_path)
 
 		cmd.Dir = path_name
-
-		// STD
 
 		var stdout bytes.Buffer
 		var stderr bytes.Buffer
