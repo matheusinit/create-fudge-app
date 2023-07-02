@@ -61,3 +61,13 @@ func TestIfGetAppNameReturnsProperValueAtOnlyRelativePathEndingWithSlash(t *test
 		t.Errorf("getAppName(installation_path) = %q, want %q", got, expected)
 	}
 }
+
+func TestIfGetAppNameReturnsProperValueAtEmptyInstallationPath(t *testing.T) {
+	installation_path := ""
+
+	expected := "app"
+
+	if got := getAppName(installation_path); got != expected {
+		t.Errorf("getAppName(installation_path) = %q, want %q", got, expected)
+	}
+}
