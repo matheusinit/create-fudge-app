@@ -13,7 +13,7 @@ func getAppName(installation_path string) string {
 
 	app_name := path_slices[len(path_slices)-1]
 
-	if app_name == "." || strings.Trim(app_name, " ") == "" {
+	if strings.Contains(app_name, ".") || strings.Trim(app_name, " ") == "" {
 		return "app"
 	}
 
