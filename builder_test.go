@@ -1,6 +1,7 @@
 package main
 
 import "testing"
+import "strings"
 
 func TestIfGetAppNameDefaultValue(t *testing.T) {
 	installation_path := ""
@@ -64,6 +65,16 @@ func TestIfGetAppNameReturnsProperValueAtOnlyRelativePathEndingWithSlash(t *test
 
 func TestIfGetAppNameReturnsProperValueAtEmptyInstallationPath(t *testing.T) {
 	installation_path := ""
+
+	expected := "app"
+
+	if got := getAppName(installation_path); got != expected {
+		t.Errorf("getAppName(installation_path) = %q, want %q", got, expected)
+	}
+}
+
+func TestIfGetAppNameReturnsProperValueAtInstallationPathOnlyWithSpaces(t *testing.T) {
+	installation_path := strings.Repeat(" ", 10)
 
 	expected := "app"
 
